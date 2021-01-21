@@ -1,0 +1,15 @@
+---
+title: "Johan Bové"
+date: Last Modified
+site_section: home
+---
+{% include "_head.njk" %}
+<body class="no-js {{ site_section }}">
+<timed-backgrounds></timed-backgrounds>
+<div id="root">
+  <header>
+    <h1 class="page-title" role="banner">{{ title | safe }}</h1>
+    {% include "_nav-primary.html" %}
+  </header>
+  {{ content | safe }}
+  {% include "_foot.njk" %}

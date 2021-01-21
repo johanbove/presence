@@ -1,0 +1,18 @@
+{% include "_head.njk" %}
+<body class="no-js post">
+<timed-backgrounds></timed-backgrounds>
+<div id="root">
+  <header>
+    <h1 class="page-title" role="banner"><a href="{{ '/' | url | relative }}" title="home">~/</a>{{ page.url | navpath | safe }}</h1>
+    {% include "_nav-primary.html" %}
+  </header>
+  <main>
+    <section id="post">
+      {{ content | safe }}
+    </section>
+    <section id="webmentions">
+      {% set webmentionUrl %}{{ page.url | url | absoluteUrl(site.url) }}{% endset %}
+      {% include 'webmentions.njk' %}
+    </section>
+  </main>
+  {% include "_foot.njk" %}

@@ -1,0 +1,12 @@
+{% include "_head.njk" %}
+</head>
+<body class="text">
+  <div id="root">
+    <main>
+      <section id="text">
+        <article role="main">
+          {{ content | safe }}
+        </article>
+      </section>
+    </main>
+{% include "_foot.njk" %}

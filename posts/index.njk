@@ -1,0 +1,50 @@
+---
+layout: posts
+title: Posts by Johan
+description: I write the occasional post about something I care about.
+changeFreq: weekly
+pagination:
+  data: collections.PostsSortedByPublished
+  size: 10
+---
+
+<h2>
+  {% if pagination.pageNumber == 0 %} Most Recent Posts{% endif %}
+  {% if pagination.pageNumber >= 1 %} Post Archive Page {{ pagination.pageNumber }}{% endif %}
+</h2>
+
+ {% if pagination.pageNumber == 0 %}
+ <p>{{ description }} I have written {{ collections.PostsSortedByPublished.length }} posts.</p>
+ {% endif %}
+
+<ul class="index">
+  {%- for post in pagination.items -%}
+    <li class="h-entry">
+      {% if post.data.teaser %}
+      <p>
+      {% endif %} 
+        <time class="dt-published" datetime="{{ post.data.published | asDate | dateToRfc3339 }}">{{ post.data.published | asDate | isoDate }}</time> <a href="{{ post.url | url | relative }}" class="u-url"><span class="p-name">{{ post.data.title }}</span></a>
+        <span class="hidden"><a href="{{ site.author.profile }}" class="p-author h-card">{{ site.author.name }}</a></span>
+      {% if post.data.teaser %}
+      </p>
+      {% endif %}
+      {% if post.data.teaser %}
+      <blockquote>{{ post.data.teaser }}</blockquote>
+      {% endif %} 
+    </li>
+  {%- endfor -%}
+</ul>
+
+<nav class="pagination" aria-labelledby="post-archive">
+  <ol>
+    {# <li>{% if page.url != pagination.href.first %}<a href="{{ pagination.href.first | url | relative }}">First</a>{% else %}First{% endif %}</li> #}
+    <li>{% if pagination.href.previous %}<a href="{{ pagination.href.previous | url | relative }}">Newer</a>{% else %}Newer{% endif %}</li>
+{# {%- for pageEntry in pagination.pages %}
+    {%- if loop.index != pagination.pages.length %}
+    <li><a href="{{ pagination.hrefs[ loop.index ] | url | relative }}"{% if page.url == pagination.hrefs[ loop.index ] %} aria-current="page"{% endif %}>Page {{ loop.index }}</a></li>
+    {% endif %}
+{%- endfor %} #}
+    <li>{% if pagination.href.next %}<a href="{{ pagination.href.next | url | relative }}">Older</a>{% else %}Older{% endif %}</li>
+    {# <li>{% if page.url != pagination.href.last %}<a href="{{ pagination.href.last | url | relative }}">Last</a>{% else %}Last{% endif %}</li> #}
+  </ol>
+</nav>

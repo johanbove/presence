@@ -1,0 +1,27 @@
+{
+  "title": "Johan Bové",
+  "description": "Info-Tech professional passionate about the Web",
+  "baseline": "Captivating Online Matters",
+  "baseurl": "/",
+  "domain": "johanbove.info",
+  "url": "https://johanbove.info",
+  "comments": false,
+  "author": {
+    "name": "Johan Bové",
+    "firstname": "Johan",
+    "pronoun": "him",
+    "email": "hello@johanbove.info",
+    "profile": "https://johanbove.info/me",
+    "twitter": "@johanbove",
+    "website": "https://johanbove.info",
+    "avatar": "https://www.gravatar.com/avatar/4554cca5bb71b81cad02162b4473a226?s=300",
+    "pgp": {
+      "publicKey": "/static/E44E71105E920276ED1693294AAE11D0B6A8D5E8.asc",
+      "fingerPrint": "E44E 7110 5E92 0276 ED16 9329 4AAE 11D0 B6A8 D5E8"
+    }
+  },
+  "og_locale": "en",
+  "theme": {
+    "color": "#000000"
+  }
+}

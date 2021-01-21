@@ -1,0 +1,12 @@
+---
+layout: plans
+date: Last Modified
+---
+<article role="main" class="h-entry" id="{{ plan }}">
+  <h1 class="p-name">{{ title }}</h1>
+  <div class="e-content">
+    {{ content | safe }}
+  </div>
+  {% set planMetas = { author: site.author.name, started: started, updated: page.date | dateToRfc3339, status: status, url: page.url | url | relative, authorUrl: '/#me' | url | relative, completed: completed } %}
+  {% include "_meta-plan.njk" %}
+</article>

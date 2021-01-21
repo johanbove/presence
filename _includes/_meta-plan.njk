@@ -1,0 +1,12 @@
+<dl class="meta">
+  <dt>Author</dt>
+  <dd><a href="{{ planMetas.authorUrl }}" rel="author" class="p-author h-card">{{ planMetas.author }}</a></dd>
+  <dt>Started</dt>
+  <dd><a href="{{ planMetas.url }}" class="u-url"><time class="dt-published" datetime="{{ planMetas.started | asDate | dateToRfc3339 }}">{{ planMetas.started | asDate | isoDate }}</time></a></dd>
+  <dt>Completed</dt>
+  <dd><time datetime="{{ planMetas.completed }}">{{ planMetas.completed }}</time></dd>
+  <dt>Updated</dt>
+  <dd><time class="dt-updated" datetime="{{ planMetas.updated | asDate | dateToRfc3339 }}">{{ planMetas.updated | asDate | isoDate }}</time></dd>
+  <dt>Status</dt>
+  <dd>{{ planMetas.status }}</dd>
+</dl>

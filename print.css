@@ -1,0 +1,31 @@
+body {
+  background-color: #fff;
+  color: rgb(12, 12, 12);
+}
+
+nav {
+  display: none;
+}
+
+.page-title {
+  font-size: 16px;
+}
+
+timed-backgrounds {
+  display: none;
+}
+
+#webmentions,
+footer {
+  border-top: 2px solid black;
+  margin-top: 20px;
+}
+
+footer .footprint,
+footer .indieweb-webring,
+footer .nocookies,
+footer .legal a[rel="impressum"],
+footer .mirrors,
+footer .badges {
+  display: none;
+}

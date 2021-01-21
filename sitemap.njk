@@ -1,0 +1,10 @@
+---
+layout: post
+title: Sitemap
+eleventyExcludeFromCollections: true
+---
+<ul class="index">
+{%- for post in collections.all -%}
+  <li><a href="{{ post.url | url | relative }}">{{ post.url }}</a></li>
+{%- endfor -%}
+</ul>

@@ -1,0 +1,26 @@
+<nav id="plans">
+  <div class="plans__started">
+    <h4>Started Plans</h4>
+    <ol class="tags tags-started">
+      {%- for post in collections.started -%}
+      <li><a href="{{ post.url | url | relative }}" class="plan u-url">#{{ post.data.plan | plantag }}</a></li>
+      {%- endfor -%}
+    </ol>
+  </div>
+  <div class="plans__postponed">
+    <h4>Post-poned Plans</h4>
+    <ol class="tags tags--postponed">
+      {%- for post in collections.postponed -%}
+      <li><a href="{{ post.url | url | relative }}" class="plan u-url">#{{ post.data.plan | plantag }}</a></li>
+      {%- endfor -%}
+    </ol>
+  </div>
+  <div class="plans_completed">
+    <h4>Completed Plans</h4>
+    <ol class="tags tags--completed">
+      {%- for post in collections.completed | reverse -%}
+      <li><a href="{{ post.url | url | relative }}" class="plan u-url">#{{ post.data.plan | plantag }}</a></li>
+      {%- endfor -%}
+    </ol>
+  </div>
+</nav>

@@ -1,0 +1,131 @@
+{#  _includes/webmentions.njk #}
+{% if webmentionUrl == "/" %}{% set mentionsUrl = site.url + webmentionUrl %}{% else %}{% set mentionsUrl = webmentionUrl %}{% endif %}
+{#  Filter the cached mentions to only include ones matching the post's url #}
+{% set mentions = webmentions | getWebmentionsForUrl(mentionsUrl) %}
+{#  Set reposts as mentions that are `repost-of` #}
+{% set reposts = mentions | webmentionsByType('repost-of') %}
+{#  Count the total reposts #}
+{% set repostsSize = reposts | size %}
+{#  Set likes as mentions that are `like-of` #}
+{% set likes = mentions | webmentionsByType('like-of') %}
+{#  Count the total likes #}
+{% set likesSize = likes | size %}
+{#  Set replies as mentions that are `in-reply-to` #}
+{% set replies = mentions | webmentionsByType('in-reply-to')  %}
+{#  Count the total replies #}
+{% set repliesSize = replies | size  %}
+{% set mentionOfs = mentions | webmentionsByType('mention-of')  %}
+{#  Count the total entries #}
+{% set mentionOfsSize = mentionOfs | size  %}
+
+{# <pre>
+webmentionUrl: {{ mentionsUrl }}
+repostsSize: {{ repostsSize }}
+likesSize: {{ likesSize }}
+repliesSize: {{ repliesSize }}
+mentionOfsSize: {{ mentionOfsSize }}
+</pre> #}
+
+<div class="webmentions" id="webmentions">
+  {% if likesSize > 0 %}
+  <div class="webmentions__facepile">
+    <h3{% if repostsSize > 11 or likesSize > 11 %} class="webmentions__facepile__squish" {% endif %}>{{ likesSize }}
+      Like{% if likesSize != 1 %}s{% endif %}</h3>
+
+      {% for webmention in likes %}
+
+        {% if webmention.url != "" %}
+          <a class="h-card u-url link-u-exempt" href="{{ webmention.url }}" target="_blank" rel="noopener noreferrer">
+        {% endif %}
+
+        {% if webmention.author.photo %}
+        <img src="{{ webmention.author.photo }}" alt="{{ webmention.author.name }}" width="48" height="48" loading="lazy">
+        {% else %}
+        <img class="webmention__author__photo" src="{{ '/images/avatar.svg' | url }}" alt="avatar" width="48" height="48">
+        {% endif %}
+
+        {% if webmention.url != "" %}
+          </a>
+        {% endif %}
+      {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if mentionOfsSize > 0 %}
+  <div class="webmentions__facepile">
+    <h3{% if repostsSize > 11 or mentionOfsSize > 11 %} class="webmentions__facepile__squish" {% endif %}>{{ mentionOfsSize }}
+      mention{% if mentionOfsSize != 1 %}s{% endif %}</h3>
+
+      {% for webmention in mentionOfs %}
+
+        {% if webmention.url != "" %}
+          <a class="h-card u-url link-u-exempt" href="{{ webmention.url }}" target="_blank" rel="noopener noreferrer">
+        {% endif %}
+
+        {% if webmention.author.photo %}
+        <img src="{{ webmention.author.photo }}" alt="{{ webmention.author.name }}" width="48" height="48" loading="lazy">
+        {% else %}
+        <img class="webmention__author__photo" src="{{ '/images/avatar.svg' | url }}" alt="avatar" width="48" height="48">
+        {% endif %}
+
+        {% if webmention.url != "" %}
+          </a>
+        {% endif %}
+      {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if repostsSize > 0 %}
+  <div class="webmentions__facepile">
+    <h3{% if repostsSize > 11 or likesSize > 11 %} class="webmentions__facepile__squish" {% endif %}>{{ repostsSize }} Retweet{% if repostsSize != 1 %}s{% endif %}</h3>
+
+      {% for webmention in reposts %}
+        {% if webmention.url != "" %}
+        <a class="h-card u-url link-u-exempt" href="{{ webmention.url }}" target="_blank" rel="noopener noreferrer">
+        {% endif %}
+
+        {% if webmention.author.photo %}
+        <img src="{{ webmention.author.photo }}" alt="{{ webmention.author.name }}" width="48" height="48" loading="lazy">
+        {% else %}
+        <img class="webmention__author__photo" src="{{ '/images/avatar.svg' | url }}" alt="" width="48" height="48">
+        {% endif %}
+        {% if webmention.url != "" %}
+        </a>
+        {% endif %}
+      {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if repliesSize > 0 %}
+  <div class="webmention-replies">
+    <h3>{{ repliesSize }} {% if repliesSize == "1" %}Reply{% else %}Replies{% endif %}</h3>
+
+    {% for webmention in replies %}
+      {% include 'webmention.njk' %}
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <div class="webmention-form">
+
+    <p class="webmention-teaser">
+    This site supports <a href="https://indieweb.org/Webmention" rel="noopener noreferral" title="Check out the IndieWeb!">webmentions</a> via <a href="https://webmention.io/" rel="noopener noreferral">webmention.io</a>.<br>
+    Mention <span title="permalink: {{ webmentionUrl }}">this URL</span> from your site: <code>{% if webmentionUrl == "/" %}{{ site.url + webmentionUrl }}{% else %}{{ webmentionUrl }}{% endif %}</code>
+    </p>
+
+    <form action="https://webmention.io/{{ site.domain }}/webmention" method="post" class="form-webmention">
+      <label for="form-webmention-source">Send me your response URL</label>
+      <input id="form-webmention-source" type="url" name="source" placeholder="https://example.com" size="30" required>
+      {% if webmentionUrl == "/" %}
+      <input type="hidden" name="target" value="{{ site.url + webmentionUrl }}">
+      {% else %}
+      <input type="hidden" name="target" value="{{ webmentionUrl }}">
+      {% endif %}
+      <input type="submit" class="button button-small" value="Send Webmention">
+    </form>
+
+    <p class="webmention-teaser">Use <a href="https://webmention.app/" rel="noopener noreferral">webmention.app</a> to send out your own webmentions easily.</p>
+
+  </div>
+
+</div>

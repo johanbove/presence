@@ -1,0 +1,36 @@
+{%- set interests = 'IndieWeb,Known CMS,Vue.js,redecentralization,Web 3,Secure Scuttlebutt,Beaker Browser,Hyperdrives,Brave Browser,web monetization,IPFS,JamStack'.split(',').sort() -%}
+
+<div class="block block--bio">
+<h3>A <em>Web Developer</em> in Hyperspace</h3>
+<p>Hi and welcome to my personal home page.</p>
+<p>As I wanted to stay in charge of my online presence I made this site to share relevant information about myself.</p>
+<p>You can find <a href="{{ '/contact' | url | relative }}" class="u-url inline">my contact information</a> here and links to my other sites, as well as some notes and posts I wanted to publish.</p>
+<p>I also keep <a href="https://social.johanbove.info" itemprop="url" rel="noopener noreferrer" class="u-url inline">a Known site</a> through which from time-to-time I try to share something interesting on the World Wide Web.</p>
+</div>
+
+<div class="block block--bio">
+<h3>Five Facts About Me</h3>
+<p>Since November 2016, I work as a <span itemprop="description">front-end developer and senior consultant</span> at <span itemprop="worksFor" class="logo--deloitte-digital">Deloitte Digital</span> in <span itemprop="workLocation">Düsseldorf</span>, Germany.</p>
+<p>I am happily married to Erica. We are the parents of a wonderful little boy, Nathan.</p>
+<p>I bike to work whenever I can, even when it rains.</p>
+<p>I love to learn about new technology, especially Internet and Web-related innovations.</p>
+<p>I like sci-fi movies and books but read mostly non-fictional literature and articles.</p>
+</div>
+
+<div class="block block--bio">
+<h3>My work introduction</h3>
+<p>Throughout my career as a web developer I have gathered relevant and hands-on professional experience <span itemprop="knowsAbout">building performant Web sites and Web applications</span>.</p>
+<p>People I worked with have called me an expert in <span itemprop="knowsAbout">HTML</span>, <span itemprop="knowsAbout">CSS</span> and <span itemprop="knowsAbout">JavaScript</span>, with which I know how to build complex, scalable <span itemprop="knowsAbout">browser applications</span>.</p>
+<p>When creating <span itemprop="knowsAbout">web applications</span>, I take special consideration for <span itemprop="knowsAbout">security</span>, <span itemprop="knowsAbout">accessibility</span> and <span itemprop="knowsAbout">performance optimization</span>.</p>
+</div>
+
+<div class="block block--bio">
+<h3>Current interests</h3>
+<p>
+  A selection of systems and technologies I am currently interested in: &nbsp;
+  {%- for interest in interests -%}
+    <span itemprop="knowsAbout">{{ interest }}</span>,&nbsp;
+  {%- endfor -%}
+  &hellip;
+</p>
+</div>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="{{ locale if locale else site.og_locale }}">
+<head>
+<meta charset="UTF-8">
+<title>{{ title }}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="{{ description if description else site.description | truncate(75, true, '...') }}">
+<meta name="theme-color" content="{{ site.theme.color }}">
+{# <!-- Web Monetization active --> #}
+{# <meta name="monetization" content="$ilp.uphold.com/B9gQanj9dh84"> #}
+<meta name="flattr:id" content="zl0ygx">
+{% include "_head_identity.njk" %}
+<link rel="shortcut icon" href="{{ '/favicon.ico' | url | relative }}" type="image/x-icon">
+{# <link rel="manifest" href="./manifest.json"> #}
+<link rel="alternate" type="application/rss+xml" title="RSS" href="{{ '/feed.xml' | url | relative }}">
+{% include "_css.html" %}
+</head>

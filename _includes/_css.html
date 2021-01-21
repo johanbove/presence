@@ -1,0 +1,13 @@
+<!-- feed it through our cssmin filter to minify -->
+<!-- capture the layout CSS content as a Nunjucks variable -->
+{% set css %}
+  {% include "layout.css" %}
+{% endset %}
+<!-- feed it through our cssmin filter to minify -->
+<style media="screen">
+  {{ css | cssmin | safe }}
+</style>
+
+<link href="{{ '/theme.css' | url | relative }}" type="text/css" rel="stylesheet" media="screen" title="Default Style">
+<link href="{{ '/theme-basic.css' | url | relative }}" type="text/css" rel="alternate stylesheet" media="screen" title="Basic">
+<link href="{{ '/print.css' | url | relative }}" type="text/css" rel="stylesheet" media="print">

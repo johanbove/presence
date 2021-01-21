@@ -1,0 +1,36 @@
+{% include "_footer.njk" %}
+
+</div>{# /content #}
+
+<script>document.body.classList.remove('no-js')</script>
+<script type="text/javascript" src="{{ '/scripts/web-comp_timed-background.mjs' | url | relative }}"></script>
+
+<!-- Code syntax hightlight -->
+<link href="https://unpkg.com/prismjs@1.20.0/themes/prism-twilight.css" type="text/css" rel="stylesheet" media="(prefers-color-scheme: dark)">
+<link href="https://unpkg.com/prismjs@1.20.0/themes/prism.css" type="text/css" rel="stylesheet" media="(prefers-color-scheme: light)">
+
+<style>
+/* https://mxb.dev */
+#post pre[class*="language-"] {
+    margin: 2rem;
+}
+#post pre[class*="language-"] {
+    box-shadow: none;
+    display: block;
+    font-size: 1rem;
+    padding: 2rem 1.5rem;
+    overflow-x: auto;
+    border-width: 1px;
+}
+#post pre[class*="language-"] > code {
+    width: 100%;
+    max-width: 41rem;
+    max-width: var(--content-max-width,41rem);
+    margin-left: 0;
+    margin-right: auto;
+    display: block;
+}
+</style>
+
+</body>
+</html>

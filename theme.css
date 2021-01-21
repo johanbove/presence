@@ -1,0 +1,216 @@
+/* Only design */
+
+body {
+  background-color: #00212f;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEMAAABkCAYAAADdY439AAADnklEQVR4nOWcsZYCIQxFb209vfXW1tb+PDWc+DXbyB6WRR1HIG/cnGOzrnp9BBJCEJzNzM6enx9COJjZOcZ4JKV0SSmdYoxHDxgvMWKMx5TSqXz8esLMztfr9cvMlllQM8Wov2cI4bDqBSml06oXvGmjxTCz5TbA55sQrw90COFwE2boNBohRgjhUArQld3Mluxevd+8pxilV8cYj6O9uvs0eleMch3YPA16WPaYd4TZIka9DnhFwrsWYzxugVsrRrGGnSQFaFlrfXnkMc/EuF6vX1PXgRGWR9LMzo/yl5TSpf6bZ94zxe6t9NkzRkYsWSvnfvaaLJKZLbucBlutJUZ+/AtvgN/TIIfhvGPMzz9bX3Zta/YFrWhSes5uIwi084F3QmstTH/izvaqAKWtTbqyl8kK83J9oGGvpuP1Auy6vpQj1CMc9tioZZ4Z9Zc/2aTiFn4kY9MdR6guXdz5tLJfueiuqnfUCdG/LQh7b4w8jgpa0+jnqMDTvA+R8jZAIm/xFiMzSKT8KmJ4MwAaIAoMgAaIAgOgAaLAAGiAKDAAGiAKDIAGiAIDoAGiwABogCgwABogCgyABogCA6ABosAAaIAoMAAaIAoMgAaIAgOgAaLAAGiAKDAAGiAKDIAGiAIDoAGiwABogCgwABogCgwAKBzeuItRtjh5tyq5iJGP9coOn6Lfw+1G1FQx6k7he15QN+bPOgAfLoaZLVmELa0NMzv+hohRds/k0e31niOb6buJUXf4jBzFUdet3hZjRovTrM/fJIZnh88jW7tA37PVYuzpBlCLdc2APRSjzAcUkqItViZ1zzpz/ogxq9XRw6y62FN7y0/nzprO/0+yOrHL1zzMbEGmuWuylWE6OwK7vxm4wQrvuJQ3ooB2MvNpwjz6jnejydBL9ZOtlR23/m9VnuG1i3zHtkTFlzPQMjwpTqNn4fPJa7ftTVoFGi9hQgiH8mditk7pLrvWWpgZ06jOjq3DxeDu9YyRm7h6z9E7Ox5a6epR37hlhks9DfZyG6ppZZa3ZkQ9cp7p1fG6JFgudt5Jn+u5SRUGL9OuYd7n8T9RyztG75xFQgzQAFFgADRAFBgADRAFBkADRIEB0ABRYAA0QBQYAA0QBQZAA0SBAdAAUWAANEAUGAANEAUGQANEgQHQAFFgADRAFBgADRAFBkADRIEB0ABRYAA0QBQYAA0QBQZAA0SBAdAAUWAANEAUGAANEAUGQAMkM3wD/w3Oh7Pj72cAAAAASUVORK5CYII=');
+  background-attachment: fixed;
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 16px;
+  margin: 0;
+}
+
+@media screen and (min-width: 1440px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+body.no-js {
+  background-image: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+address,
+nav,
+li {
+  font-weight: 400;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, .25);
+  line-height: 1.5;
+}
+
+blockquote {
+  font-style: oblique;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-size: larger;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+small,
+.small {
+  font-size: x-small;
+}
+
+.bigger {
+  font-size: larger;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+p.webmention-teaser {
+  font-size: 0.85rem;
+  font-style: oblique;
+}
+
+footer p {
+   font-size: 0.85rem;
+}
+
+.logo--deloitte-digital {
+  font-family: 'Open Sans', Asap, sans-serif;
+  font-weight: 700;
+  letter-spacing: -1px;
+  white-space: nowrap;
+}
+
+.contact {
+  margin-top: 1rem;
+  font-style: normal;
+  font-size: smaller;
+}
+
+a, button, input {
+  color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(125, 125, 125, 0.1);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+  display: inline-block;
+  padding: 0 5px;
+  transition: background-color ease-in-out 0.5s;
+  border-bottom: 1px solid rgba(60, 60, 60, 0.1);
+}
+
+button, input {
+  padding: 8px;
+  border: 1px solid rgba(60, 60, 60, 0.1);
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+a:hover, button:hover, input:hover, button:focus, input:focus {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(200, 200, 200, 0.2);
+  text-shadow: none;
+}
+
+.badges a:link {
+  padding: 0;
+  background-color: inherit;
+  border: none;
+  box-shadow: none;
+}
+
+figure.avatar {
+  filter: sepia(5%) saturate(50%) brightness(110%);
+  opacity: 0.95;
+  box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.35);
+  border: 1px outset rgba(0, 0, 0, 0.25);
+}
+
+footer .last-modified,
+footer .offline-note {
+  font-size: smaller;
+}
+
+.meta {
+  font-family: consolas, monospace;
+  font-size: smaller;
+  font-style: oblique;
+  opacity: 0.75;
+}
+
+h1.p-name + .meta {
+  margin-top: -1.5rem;
+  margin-left: 1rem;
+  margin-bottom: 2rem;
+}
+
+.meta__time {
+  font-family: consolas, monospace;
+  font-size: smaller;
+}
+
+dl.meta {
+  border-top: 1px outset rgba(0, 0, 0, 0.35);
+}
+
+.task:first-child {
+  border-top: none;
+}
+
+#webmentions {
+  flex: 1;
+  flex-basis: 100%;
+  font-size: 0.9rem;
+  margin: 2rem 1rem;
+}
+
+input.hash, .hash {
+  background: none;
+  color: snow;
+  border: none;
+  font-size: 1rem;
+  font-family: monospace;
+  cursor: default;
+}
+
+/* regular screens */
+@media screen and (min-width: 800px) {
+  timed-backgrounds {
+    display: block;
+  }
+
+  time {
+    font-family: Georgia, serif;
+  }
+
+  header,
+  section {
+    border: none;
+    box-shadow: 0 0 1px rgba(255, 255, 255, 0.25);
+    transition: box-shadow 1s ease-in-out;
+  }
+
+  section:focus,
+  section:active,
+  section:target {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.35);
+  }
+
+  .profile__details p {
+    font-size: 1rem;
+  }
+
+  h1.page-title {
+    font-size: 2.5rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  
+  /* gives the box-shadow some room */
+  h1.page-title a {
+    margin-bottom: 2px;
+  }
+
+}

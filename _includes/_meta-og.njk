@@ -1,0 +1,3 @@
+<meta property="og:title" content="{{ title | truncate(50, true, '...') }}">
+<meta property="og:description" content="{{ description if description else site.description | truncate(75, true, '...') }}">
+<meta property="og:image" content="{{ hero if hero else site.author.avatar }}">

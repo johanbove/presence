@@ -1,0 +1,25 @@
+---
+permalink: 404.html
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    {% include "_css.html" %}
+  </head>
+  <body>
+    <h1><a rel="home" href="{{ "/" | url }}">{{ site.title }}</a></h1>
+    <h2 id="e404">Status 404 - Content Not Found</h2>
+    <p>The content may have moved or was never here. Sorry about that.</p>
+    <p><a href="{{ "/" | url }}">Back to the home page</a></p>
+    <p>Try searching for the content using <a href="https://duckduckgo.com/?q=site%3A{{ site.domain }}">DuckDuckGo.com</a>.</p>
+    <h2 id="search">DuckDuckGo Site Search</h2>
+    <form action="https://duckduckgo.com" method="get">
+      <label for="search-term">Search Terms</label>
+      <input type="search" name="q" id="search-term" value="site:{{ site.domain }}" autocomplete="off" size="60">
+      <button type="submit">Search</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+---
+layout: posts
+description: "A post by Johan Bové"
+date: Last Modified
+---
+<article role="main" class="h-entry">
+  <h1 class="p-name">{{ title }}</h1>
+  <p class="meta">The following {{ content | striptags | wordcount }} words were published by <a class="p-author h-card" href="{{ site.author.profile }}">{{ site.author.name }}</a> on <a href="{{ page.url | url | relative }}" class="u-url"><time class="dt-published" datetime="{{ page.date | dateToRfc3339 }}">{{ published | asDate | isoDate if published else page.date | toUTCString }}</time></a>.</p>
+  <div class="e-content">
+    {{ content | safe }}
+  </div>
+</article>

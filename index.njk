@@ -1,0 +1,32 @@
+---
+layout: main
+title: "Johan's Presence"
+---
+<main class="h-card vcard" id="me" itemscope itemtype="https://schema.org/Person">
+  <section id="home" role="complementary">
+    <aside>
+      <article id="slogan">
+        <h2 class="baseline"><em>{{ site.baseline }}</em></h2>
+      </article>
+      <article id="profile">
+        {% include "_profile.njk" %}
+      </article>
+      <article id="contactme">
+        {% include "_contact.njk" %}
+      </article>
+      <article id="webmentions">
+        {% set webmentionUrl %}{{ '/' }}{% endset %}
+        {% include 'webmentions.njk' %}
+      </article>
+    </aside>
+  </section>
+  <section id="about" role="main">
+    <article id="bio" class="p-note note blocks">
+      {% include "_bio.njk" %}
+    </article>
+    <article id="disclaimer">
+      <h3><em lang="la" title="Latin phrase translated in English as 'Always improving'">Semper meliorem facio</em></h3>
+      <p>This site allows me to experiment with web technologies which I do quite a lot, so it might not look right or break at certain times.</p>
+    </article>
+  </section>
+</main>

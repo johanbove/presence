@@ -1,0 +1,6 @@
+<meta name="twitter:site" content="{{ site.author.website }}">
+<meta name="twitter:creator" content="{{ site.author.twitter }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ title | truncate(50, true, '...')  }}">
+<meta name="twitter:image" content="{{ hero if hero else site.author.avatar }}">
+<meta name="twitter:description" content="{{ description if description else site.description | truncate(75, true, '...')  }}">
