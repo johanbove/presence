@@ -166,6 +166,18 @@ ul.index li {
   margin-top: 0.75rem;
 }
 
+ul.index li:first-child {
+  margin-top: initial;
+}
+
+.post li {
+  margin-top: 0.5rem;
+}
+
+.post li:first-child {
+  margin-top: initial;
+}
+
 /* accessibility */
 footer a {
   line-height: 40px;
@@ -261,7 +273,7 @@ footer .badges a img {
 @media screen and (min-width: 1280px) {
   .profile-loader {
     display: grid;
-    grid-template-columns: minmax(9rem, 1fr) 2fr;
+    grid-template-columns: minmax(200px, 1fr) 2fr;
     grid-gap: 2rem;
   }
 }
