@@ -34,6 +34,14 @@ Deploy
 
 ## Plans
 
+Legend: 
+
+✅ Done
+🟩 To Do
+❌ Not doing
+💡 Idea
+
+
 - ✅ Move content from https://johanbove.info here.
 - ✅ Fix layout to an usuable state.
 - ✅ Mirror gemini journal posts here.
@@ -45,8 +53,11 @@ Deploy
 - ✅ Fix Webmentions implementation
 - ✅ Fix footer links
 - ❌ Retire blog.johanbove.info site
-- ❌ Add "Quotes" page from gem.johanbove.info
-- ❌ Add anchor ids for every heading element in the page
+- 🟩 Add "Quotes" page from gem.johanbove.info
+- 🟩 Add anchor ids for every heading element in the page
+- 🟩 Include a parser of my notes from the social.johanbove.info site: https://social.johanbove.info/content/statusupdates/?_t=jsonfeed
+- 🟩 Move the content security policy to the meta tags so it applies on ipfs too.
+
  
 ## IPFS / IPNS
 
