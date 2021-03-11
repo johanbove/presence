@@ -39,8 +39,8 @@ main img {
 
 figure.avatar {
   margin: 1rem auto;
-  max-width: 9rem;
-  max-height: 9rem;
+  max-width: 200px;
+  max-height: 200px;
   overflow: hidden;
 }
 
