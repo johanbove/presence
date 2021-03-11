@@ -48,6 +48,11 @@ figure.avatar img {
   max-width: 100%;
 }
 
+figure.avatar figcaption {
+  z-index: -1;
+  position: absolute;
+}
+
 nav.pagination ol,
 nav#primary {
   display: flex;
