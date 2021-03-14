@@ -16,15 +16,20 @@ timed-backgrounds {
 
 #root,
 #content {
-  padding: 0 1rem;
   max-width: 100rem;
   margin: auto;
   position: relative;
-  display: grid;
-  grid-template-areas:
-    "header"
-    "main"
-    "footer";
+}
+
+@media screen and (min-width: 480px) {
+  #root,
+  #content {
+    display: grid;
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+  }
 }
 
 p + p,
@@ -40,7 +45,6 @@ main img {
 figure.avatar {
   margin: 1rem auto;
   max-width: 200px;
-  max-height: 200px;
   overflow: hidden;
 }
 
