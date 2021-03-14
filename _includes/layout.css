@@ -43,13 +43,11 @@ main img {
 }
 
 figure.avatar {
+  box-sizing: content-box;
   margin: 1rem auto;
-  max-width: 200px;
+  width: 200px;
+  height: 200px;
   overflow: hidden;
-}
-
-figure.avatar img {
-  max-width: 100%;
 }
 
 figure.avatar figcaption {
